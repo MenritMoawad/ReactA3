@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: helvetica;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: helvetica;
+}
+
+.main-content {
+  padding-top: 50px;
+}
+
+.search-container input {
+  height: 40px;
+  width: 500px;
+}
+
+.search-container img {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 15px;
+}
+
+.search-container {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.list-container {
+  float: right;
+  width: 300px;
+  margin-right: 70px;
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.search-container::after {
+  clear: both;
+}
+
+.video-list {
+  list-style: none;
+  cursor: pointer;
+}
+
+.video-list li {
+  padding: 10px;
+}
+
+.video-list li:hover {
+  text-decoration: underline;
+}
