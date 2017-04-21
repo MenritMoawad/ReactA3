@@ -1,54 +1,130 @@
 body {
   margin: 0;
-  font-family: helvetica;
+  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  color: #0a0a0a;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
-  font-family: helvetica;
+  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: inherit;
+  text-rendering: optimizeLegibility;
 }
 
 .main-content {
   padding-top: 50px;
 }
 
-.search-container input {
-  height: 40px;
-  width: 500px;
+.nav {
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
-.search-container img {
-  width: 50px;
-  height: 50px;
+.nav form {
+  display: inline-block;
+  width: 60%;
+  align-self: center;
+  margin-top: 25px;
+}
+
+.nav input {
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: .5rem;
+  border: 1px solid #cacaca;
+  border-radius: 0;
+  background-color: #fefefe;
+  box-shadow: inset 0 1px 2px hsla(0, 0%, 4%, .1);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.nav img {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 5px;
+  width: 120px;
   float: left;
-  margin-right: 15px;
 }
 
-.search-container {
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-.list-container {
-  float: right;
-  width: 300px;
-  margin-right: 70px;
-  max-height: 500px;
-  overflow: scroll;
-}
-
-.search-container::after {
+.nav::after {
   clear: both;
+}
+
+.content {
+  background-color: #F1F1F1;
+  padding: 20px 70px;
+  display: flex;
+}
+
+.main, .sidebar {
+  background-color: #fff;
+  padding: 30px;
+}
+
+.main {
+  margin-right: 20px;
+  float: left;
+  width: 50%;
+}
+
+.sidebar {
+  max-height: 80vh;
+  max-width: 250px;
+  overflow: scroll;
+  float: right;
+  display: inline-block;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+  margin: -30px -30px 20px;
+  border-bottom: 20px solid #f1f1f1;
+}
+
+h3, h4 {
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .video-list {
   list-style: none;
-  cursor: pointer;
+  margin: 0;
 }
 
 .video-list li {
-  padding: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  padding-bottom: 15px;
+  display: flex;
+  cursor: pointer;
 }
 
-.video-list li:hover {
-  text-decoration: underline;
+.video-list .image-container {
+  margin-right: 10px;
+}
+
+.video-list h6 {
+  flex: 2;
+}
+
+.content::after {
+  clear: both;
 }

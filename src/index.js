@@ -42,21 +42,31 @@ class App extends React.Component {
 
     axios.get(API_URL, {params: params}).then(response => {
       this.setState({videos: response.data.items});
+      this.setState({activeVideo: response.data.items[0]});
+      // console.log(response.data.items[0]);
     });
+  }
+
+  clickOnVideo(i) {
+    let lst = this.state.videos;
+    let newV = lst[i];
+    this.setState({activeVideo: newV});
   }
 
   render() {
     return (
-      <div className="search-container">
-        <img src="youtube.png" alt=""/>
-        <form onSubmit={this.searchVideos}>
-          <input ref="keyword" type="text" placeholder="Search"/>
-        </form>
-        <div className="list-container">
-          <VideoList videos={this.state.videos}/>
+      <div>
+        <div className="nav">
+          <img src="youtubeimg.png" alt=""/>
+          <form onSubmit={this.searchVideos}>
+            <input ref="keyword" type="text" placeholder="Search"/>
+          </form>
         </div>
-        <div className="main-content">
-          <VideoPreview/>
+        <div className="content">
+          <div className="main">
+            <VideoPreview activeVideo={this.state.activeVideo}/>
+          </div>
+          <VideoList videos={this.state.videos} clickOnVideo={this.clickOnVideo.bind(this)}/>
         </div>
       </div>
     )

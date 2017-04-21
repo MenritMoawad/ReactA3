@@ -1,11 +1,10 @@
 import React from 'react';
 
 function VideoList(props) {
-  console.log(props);
   return (
-    <div>
+    <div className="sidebar">
       <ul className="video-list">
-        {props.videos.map((video, i) => <li key={i}>
+        {props.videos.map((video, i) => <li key={i} onClick={props.clickOnVideo.bind(null, i)}>
           <div className="image-container">
             <img src={video.snippet.thumbnails.default.url} alt=""/>
           </div>
